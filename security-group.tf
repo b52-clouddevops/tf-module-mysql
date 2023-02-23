@@ -1,11 +1,11 @@
 # Creates Security Group
-resource "aws_security_group" "allow_mongodb" {
-  name        = "roboshop-${var.ENV}-mongodb-sg"
+resource "aws_security_group" "allow_mysql" {
+  name        = "roboshop-${var.ENV}-mysql-sg"
   description = "Allow 27017 inbound traffic from intranet only"
   vpc_id      = data.terraform_remote_state.vpc.outputs.VPC_ID
 
   ingress {
-    description = "Allow DOCDB From Local Network"
+    description = "Allow RDS From Local Network"
     from_port   = 27017
     to_port     = 27017
     protocol    = "tcp"
@@ -13,7 +13,7 @@ resource "aws_security_group" "allow_mongodb" {
   }
 
   ingress {
-    description = "Allow DOCDB From Default VPC Network"
+    description = "Allow RDS From Default VPC Network"
     from_port   = 27017
     to_port     = 27017
     protocol    = "tcp"
@@ -28,6 +28,6 @@ resource "aws_security_group" "allow_mongodb" {
   }
 
   tags = {
-    Name = "roboshop-${var.ENV}-mongodb-sg"
+    Name = "roboshop-${var.ENV}-mysql-sg"
   }
 }
