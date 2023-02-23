@@ -11,7 +11,7 @@ resource "aws_db_instance" "mysql5" {
   parameter_group_name   = aws_db_parameter_group.mysql.name
   db_subnet_group_name   = aws_db_subnet_group.mysql.name
   skip_final_snapshot    = true
-  vpc_security_group_ids = aws_security_group.allow_mysql.id
+  vpc_security_group_ids = [aws_security_group.allow_mysql.id]
 }
 
 
