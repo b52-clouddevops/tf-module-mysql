@@ -8,7 +8,7 @@ resource "aws_db_instance" "mysql5" {
   instance_class       = "db.t3.micro"
   username             = "admin1"
   password             = "RoboShop@1"
-  parameter_group_name = "aws_db_parameter_group.mysql.name
+  parameter_group_name = aws_db_parameter_group.mysql.name
   skip_final_snapshot  = true
 }
 
