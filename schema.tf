@@ -1,7 +1,7 @@
 resource "null_resource" "mysql-schema" {
   
   # This is how we can create depenency and ensure this will only run after the creation if the RDS Instance.
-  depends = [aws_db_instance.mysql5]
+  depends_on = [aws_db_instance.mysql5]
 
   provisioner "local-exec" {
         command = <<EOF
