@@ -1,5 +1,6 @@
 resource "null_resource" {
-
+  
+  # This is how we can create depenency and ensure this will only run a
   depends = [aws_db_instance.mysql5]
   provisioner "local-exec" {
         command = <<EOF
