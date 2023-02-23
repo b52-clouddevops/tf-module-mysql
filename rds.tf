@@ -7,7 +7,7 @@ resource "aws_db_instance" "mysql5" {
   engine_version         = "5.7"
   instance_class         = "db.t3.micro"
   username               = "admin1"
-  password               = "RoboShop@1"
+  password               = "RoboShop1"
   parameter_group_name   = aws_db_parameter_group.mysql.name
   db_subnet_group_name   = aws_db_subnet_group.mysql.name
   skip_final_snapshot    = true
