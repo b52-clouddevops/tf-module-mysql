@@ -9,7 +9,7 @@ resource "aws_db_instance" "mysql5" {
   username             = "admin1"
   password             = "RoboShop@1"
   parameter_group_name = aws_db_parameter_group.mysql.name
-  db_subnet_group_name = "aws_db_subnet_group" "mysql"
+  db_subnet_group_name = aws_db_subnet_group.mysql.name
   skip_final_snapshot  = true
 }
 
