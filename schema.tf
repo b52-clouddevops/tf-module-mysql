@@ -1,6 +1,6 @@
 resource "null_resource" {
 
-    
+  depends = [aws_db_instance.mysql5]
   provisioner "local-exec" {
         command = <<EOF
         cd /tmp 
