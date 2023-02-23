@@ -29,6 +29,20 @@ resource "aws_db_parameter_group" "mysql" {
   }
 }
 
+
+# Creates subnet group for RDS
+resource "aws_db_subnet_group" "mysql" {
+  name       = "roboshop-${var.ENV}-rds-pg"
+  subnet_ids = [aws_subnet.frontend.id, aws_subnet.backend.id]
+
+  tags = {
+    Name = "My DB subnet group"
+  }
+}
+
+
+
+
 # resource "aws_docdb_cluster" "docdb" {
 #   cluster_identifier      = "roboshop-${var.ENV}-docdb"
 #   engine                  = "docdb"
