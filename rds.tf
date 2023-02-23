@@ -1,6 +1,6 @@
 # This block provisions RDS Instance On AWS
 
-resource "aws_db_instance" "default" {
+resource "aws_db_instance" "mysql5" {
   allocated_storage    = 10
   db_name              = "mydb"
   engine               = "mysql"
