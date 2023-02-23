@@ -1,17 +1,17 @@
 # This block provisions RDS Instance On AWS
 
 resource "aws_db_instance" "mysql5" {
-  allocated_storage    = 10
-  identifier           = "roboshop-${var.ENV}-mysql"
-  engine               = "mysql"
-  engine_version       = "5.7"
-  instance_class       = "db.t3.micro"
-  username             = "admin1"
-  password             = "RoboShop@1"
-  parameter_group_name = aws_db_parameter_group.mysql.name
-  db_subnet_group_name = aws_db_subnet_group.mysql.name
-  skip_final_snapshot  = true
-  vpc_security_group_ids =
+  allocated_storage      = 10
+  identifier             = "roboshop-${var.ENV}-mysql"
+  engine                 = "mysql"
+  engine_version         = "5.7"
+  instance_class         = "db.t3.micro"
+  username               = "admin1"
+  password               = "RoboShop@1"
+  parameter_group_name   = aws_db_parameter_group.mysql.name
+  db_subnet_group_name   = aws_db_subnet_group.mysql.name
+  skip_final_snapshot    = true
+  vpc_security_group_ids = 
 }
 
 
