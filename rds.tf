@@ -33,7 +33,7 @@ resource "aws_db_parameter_group" "mysql" {
 # Creates subnet group for RDS
 resource "aws_db_subnet_group" "mysql" {
   name       = "roboshop-${var.ENV}-rds-pg"
-  subnet_ids = [aws_subnet.frontend.id, aws_subnet.backend.id]
+  subnet_ids = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_IDS
 
   tags = {
     Name = "My DB subnet group"
