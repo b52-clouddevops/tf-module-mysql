@@ -6,7 +6,6 @@ resource "null_resource" {
         unzip mysql.zip 
         cd mysql-main 
         mysql -h aws_db_instance.mysql5.address -u admin1 -pRoboShop1 <shipping.sql
-
-EOF
+        EOF
   }  
 }
