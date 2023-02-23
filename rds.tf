@@ -12,6 +12,10 @@ resource "aws_db_instance" "mysql5" {
   skip_final_snapshot  = true
 }
 
+
+# Creates MySQL Parameter Group
+
+
 # resource "aws_docdb_cluster" "docdb" {
 #   cluster_identifier      = "roboshop-${var.ENV}-docdb"
 #   engine                  = "docdb"
