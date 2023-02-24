@@ -18,7 +18,7 @@ resource "aws_db_instance" "mysql5" {
 # Creates MySQL Parameter Group
 resource "aws_db_parameter_group" "mysql" {
   name   = "roboshop-${var.ENV}-mysql-pg"
-  family = "mysql5.7"
+  family = "mysql${var.}"
 
   parameter {
     name  = "character_set_server"
