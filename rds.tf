@@ -4,7 +4,7 @@ resource "aws_db_instance" "mysql5" {
   allocated_storage      = var.RDS_MYSQL_STORAGE
   identifier             = "roboshop-${var.ENV}-mysql"
   engine                 = "mysql"
-  engine_version         = "5.7"
+  engine_version         = var.RDS_MYSQL_ENGINE_VERSION
   instance_class         = var.RDS_INSTANCE_TYPE
   username               = "admin1"
   password               = "RoboShop1"
