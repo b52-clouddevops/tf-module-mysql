@@ -1,7 +1,7 @@
 # This block provisions RDS Instance On AWS
 
 resource "aws_db_instance" "mysql5" {
-  allocated_storage      = 10
+  allocated_storage      = var.RDS_MYSQL_STORAGE
   identifier             = "roboshop-${var.ENV}-mysql"
   engine                 = "mysql"
   engine_version         = "5.7"
