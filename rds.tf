@@ -6,8 +6,8 @@ resource "aws_db_instance" "mysql5" {
   engine                 = "mysql"
   engine_version         = var.RDS_MYSQL_ENGINE_VERSION
   instance_class         = var.RDS_INSTANCE_TYPE
-  username               = "admin1"
-  password               = "RoboShop1"
+  username               = local.RDS_USER
+  password               = local.RDS_PASS
   parameter_group_name   = aws_db_parameter_group.mysql.name
   db_subnet_group_name   = aws_db_subnet_group.mysql.name
   skip_final_snapshot    = true
